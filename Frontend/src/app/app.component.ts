@@ -12,9 +12,9 @@ import { environment } from '../environments/environment.development';
     RouterLink,
     RouterLinkActive,
     // NavbarComponent,
-    // HeaderComponent,
-    // DarkToggleComponent,
-    // SidebarComponent,
+    //     HeaderComponent,
+    //     DarkToggleComponent,
+    //     SidebarComponent,
     FontAwesomeModule
   ],
   templateUrl: './app.component.html',
