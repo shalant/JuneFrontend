@@ -29,7 +29,7 @@ export class AuthService {
   setUser(user: User): void {
     this.$user.next(user);
     localStorage.setItem('user-email', user.email);
-    localStorage.setItem('roles', user.roles.join(','));
+    localStorage.setItem('user-roles', user.roles.join(','));
   }
 
   user(): Observable<User | undefined> {
