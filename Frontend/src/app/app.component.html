@@ -1,10 +1,10 @@
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-4" href="/" >ZANER</a>
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-4" href="/" >Rosen-Co</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed mt-1" type="button" data-bs-toggle="collapse"
     data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="d-flex">
+  <div class="d-flex mx-5">
     <ng-container *ngIf="user === undefined; else showLogout">
       <!-- Show login  -->
       <a [routerLink]="['/login']" class="btn btn-primary">Login</a>
@@ -13,7 +13,7 @@
     <ng-template #showLogout>
       <div class="d-flex align-items-center">
         <span class="text-light">{{user?.email}}</span>
-        <button class="btn btn-primary ms-3" (click)="onLogout()">Logout</button>
+        <button class="btn btn-secondary ms-3" (click)="onLogout()">Logout</button>
       </div>
     </ng-template>
   </div>
@@ -29,16 +29,16 @@
       <div class="sidebar-sticky pt-3">
         <ul class="navbar-nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active d-flex align-items-center gap-2 text-dark ms-2" aria-current="page" [routerLink]="['/usda-data']">
+            <a class="nav-link active d-flex align-items-center gap-2 text-dark ms-2" aria-current="page" [routerLink]="['/state-data']">
               <fa-icon [icon]="faWheatAwn"></fa-icon>
               <span>
-                <h6 class="mt-2">USDA Data</h6>
+                <h6 class="mt-2">US State Data</h6>
               </span>
             </a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link active d-flex align-items-center gap-2 text-dark ms-2" [routerLink]="['/usa-map']">
+            <a class="nav-link active d-flex align-items-center gap-2 text-dark ms-2" [routerLink]="['/us-map']">
               <fa-icon [icon]="faFlagUsa"></fa-icon>
               <span>
                 <h6 class="mt-2">USA Map</h6>
@@ -64,13 +64,22 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active d-flex align-items-center gap-2 text-dark ms-2" href="#">
+
+            <ng-container *ngIf="user !== undefined">
+            <a class="nav-link active d-flex align-items-center gap-2 text-dark ms-2" (click)="onLogout()">
               <fa-icon [icon]="faUser"></fa-icon>
               <span>
                 <h6 class="mt-2">Sign out</h6>
               </span>
             </a>
+            </ng-container>
+
           </li>
+
+
+         
+
+
         </ul>
       </div>
     </nav>

@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
 })
 
 export class AppComponent implements OnInit {
-  title = 'Frontend';
+  title = 'Rosen-Co';
 
   user?: User;
 
